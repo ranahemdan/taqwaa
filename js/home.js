@@ -25,7 +25,7 @@ const ayahNumber = document.querySelector(".surah-name-number .number-ayah");
 
 function getRndForAyah(min, max) {
   // ayahRandom.innerHTML = 
-  fetch(`http://api.alquran.cloud/v1/ayah/${Math.floor(Math.random() * (max - min + 1)) + min}/ar.alafasy`)
+  fetch(`https://api.alquran.cloud/v1/ayah/${Math.floor(Math.random() * (max - min + 1)) + min}/ar.alafasy`)
     .then(response => response.json())
     .then(data => {
       let ayahTextRndm = data.data.text;
@@ -81,7 +81,7 @@ getSurah();
 
 //FUNCTION TO FETCH API FOR all DATA QURAN 
 function getSurah() {
-  fetch("http://api.alquran.cloud/v1/quran/ar.alafasy").then((result)=> {
+  fetch("https://api.alquran.cloud/v1/quran/ar.alafasy").then((result)=> {
   let myData = result.json();
   return myData;
 }).then((quran) => {
@@ -105,7 +105,7 @@ function getSurah() {
   //FUNCTION TO FETCH API FOR DATA SURAH AND FETCH ALL AUDIO AND TEXT FOR AYAHS
   surahs.forEach((item, index) => {
     item.addEventListener("click", () => {
-      fetch(`http://api.alquran.cloud/v1/surah/${index + 1}/ar.alafasy`)
+      fetch(`https://api.alquran.cloud/v1/surah/${index + 1}/ar.alafasy`)
         .then(response => response.json())
         .then(data => {
           let allAyahs = data.data.ayahs;
