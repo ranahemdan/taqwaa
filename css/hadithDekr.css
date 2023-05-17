@@ -1,0 +1,167 @@
+.container-back{
+  background-image: linear-gradient( to bottom right, #FFF3E5, #fff);
+}
+/* date in hadith page */
+.date{
+  position: relative;
+  height: 280px;
+  background-image: url(../images/back-2.jpg);
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+}
+.date .clock{
+  bottom: 0;
+}
+/* hadith  */
+.hadith-dekr .h-d-books li{
+  display: block;
+  position: relative;
+  background-image: url(../images/back-hadith.jpg);
+  height: 150px;
+}
+.hadith-dekr .h-d-books li::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(57, 81, 68, .2);
+  transition: 1s;
+  -webkit-transition: 1s;
+}
+.hadith-dekr .h-d-books li:hover::after{
+  width: 0;
+}
+.hadith-page .hadith-books li a{
+  color: var(--white-color);
+  line-height: 150px;
+}
+
+/* all hadiths */
+.hadith-dekr .all-hadiths .container{
+  padding: 4px;
+  border: 2px solid var(--main-color);
+  background-image: url(../images/hadith-text.jpg);
+}
+.hadith-dekr .all-hadiths .title{
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--yellow-color);
+  width: fit-content;
+  margin: 10px auto;
+  border-bottom: 2px solid;
+}
+.hadith-dekr .all-hadiths .name-book{
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  overflow: hidden;
+  color: var(--white-color);
+  line-height: 170%;
+}
+@media(max-width: 767px){
+  .hadith-dekr .all-hadiths .name-book{
+    font-size: 18px !important;
+  }
+}
+.hadith-dekr .all-hadiths .name-book .hadith-info{
+  padding: 20px;
+}
+@media(max-width: 767px){
+  .hadith-dekr .all-hadiths .name-book .hadith-info{
+    padding: 5px;
+  }
+}
+.hadith-dekr .name-book .hadith-info span{
+  font-size: 12px;
+  color: #ccc;
+}
+.hadith-dekr .name-book .hadith-info span:last-child{
+  font-size: 14px;
+  color: var(--beige-color);
+}
+.hadith-dekr .prev-next-btns{
+  width: 750px;
+  max-width: 100%;
+  padding: 15px 30px;
+}
+
+.hadith-dekr .prev-next-btns div {
+  width: 150px;
+  padding: 10px;
+  word-spacing: 5px;
+  font-size: 18px;
+  border-color: var(--brown-color);
+  color: var(--brown-color);
+}
+.hadith-dekr .prev-next-btns div:hover{
+  background-color: var(--brown-color);
+  color: var(--white-color);
+}
+/* ////////////////////////////////// */
+/* DEKR-PAGE */
+/* ///////////////////////////////// */
+.dekr-page .dekr-books li{
+  background-image: url("../images/back-decr.jpg");
+  height: 130px;
+  padding: 2px;
+  border: 3px solid var(--brown-color);
+}
+.dekr-page .dekr-books li a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border: 3px solid var(--yellow-color);
+}
+/* all-Azkar */
+.all-azkar{
+  background-color: var(--beige-color);
+  font-family: 'Cairo', sans-serif;
+}
+.all-azkar .title{
+  color: var(--main-color);
+}
+.all-azkar .dekr{
+  box-shadow: 0 0 2px var(--brown-color);
+  background-color: #fefad7;
+  word-spacing: 5px;
+  color: #795548;
+  font-size: 18px;
+}
+@media(max-width: 767px){
+  .all-azkar .dekr{
+    font-size: 16px;
+    padding: 12px !important;
+  }
+}
+.all-azkar .dekr .content{
+  font-weight: 600;
+  line-height: 170%;
+}
+.all-azkar .dekr .reference{
+  font-size: 15px;
+  color: #ab9d98;
+}
+.all-azkar .dekr .description{
+  font-size: 16px;
+  color: var(--main-color);
+}
+@media(max-width: 767px){
+  .all-azkar .dekr .description{
+    font-size: 14px;
+  }
+}
+.all-azkar .dekr .count{
+  border-radius: 50%;
+  background-color: var(--main-color);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  margin: auto;
+  border: 5px solid #bfbe85;
+  cursor: pointer;
+}

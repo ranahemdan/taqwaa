@@ -1,0 +1,412 @@
+
+:root{
+  --main-color: #395144;
+  --blue-color:#659dbd;
+  --dark-blue: #254e58;
+  --brown-color: #AA8B56;
+  --beige-color: #F0EBCE;
+  --yellow-color: #E6E5A3;
+  --white-color: #fff;
+  --section-color: #d0d5db;
+}
+html {
+  scroll-padding-top: 100px;
+}
+/* my calsses */
+.transition-5{
+  transition: .5s;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -ms-transition: .5s;
+  -o-transition: .5s;
+}
+li{
+  list-style: none;
+}
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
+body{
+  direction: rtl;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+.main-title{
+  width: 95%;
+  padding: 10px;
+  margin: auto;
+  border-top: 2px solid var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+  background-color: var(--brown-color);
+  color: #fff;
+  text-align: center;
+  font-size: 26px;
+  border-radius: 5px;
+  position: relative;
+}
+.main-title::after, .main-title::before{
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  border-width: 30px;
+  border-style: solid;
+}
+.main-title::after{
+  right: 0;
+  border-color: transparent #eee transparent transparent;
+}
+.main-title::before{
+  left: 0;
+  border-color: transparent transparent transparent #eee;
+}
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background-color: rgba(0, 0, 0, .5);
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgba(0, 0, 0, .7);
+}
+
+/* loader */
+.loader-section{
+  background-color: #E5EFF1;
+  transition: opacity .75s, visibility .75s;
+  -moz-transition: opacity .75s, visibility .75s;
+  -ms-transition: opacity .75s, visibility .75s;
+  -o-transition: opacity .75s, visibility .75s;
+  -webkit-transition: opacity .75s, visibility .75s;
+  z-index: 9999999999;
+}
+.loader-section.hidden{
+  opacity: 0;
+  visibility: hidden;
+}
+.loader-section img{
+  width: 300px;
+}
+
+/* page contain  */
+.contain{
+  width: 100%;
+  height: 100vh;
+  background-image: url(../images/back.jpg);
+  background-size: contain;
+  position: fixed;
+  z-index: -1;
+}
+/* container background */
+.container-back{
+  width: 94%;
+  height: 100%;
+  margin: auto;
+  background-color: #eee;
+  box-shadow: 0 0 4px #bbbebd;
+}
+/*////////// navbar/////////// */
+.navbar{
+  background-color: var(--main-color);
+  box-shadow: 0 1px 3px #333;
+}
+.navbar .navbar-brand img{
+  height: 60px;
+}
+.navbar .navbar-toggler{
+  color: var(--white-color);
+  font-size: 22px;
+  border-color: var(--white-color);
+}
+.navbar .navbar-toggler:focus{
+  box-shadow: none;
+}
+.navbar .navbar-toggler[aria-expanded="true"]{
+  border-color: var(--yellow-color);
+}
+.navbar .navbar-nav .nav-link{
+  color: var(--white-color);
+  display: inline-block;
+  font-size: 18px;
+}
+.navbar .navbar-nav .dropdown-toggle{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar .navbar-nav .dropdown-menu{
+  background-color: var(--main-color);
+  box-shadow: 0 0 3px #111;
+}
+.navbar .navbar-nav .dropdown-menu .dropdown-item{
+  color: var(--white-color);
+}
+.navbar .navbar-nav .dropdown-menu .dropdown-item:hover{
+  background-color: var(--brown-color);
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover{
+  color: var(--yellow-color);
+}
+/* //////////////landind///////////// */
+.landing{
+  background-size: cover;
+  width: 100%;
+  height:calc(100vh - 86px);
+  position: relative;
+  overflow: hidden;
+}
+/* hijri date & clock */
+.date-hijri, .clock{
+  width: fit-content;
+  height: fit-content;
+  color: #fff;
+  font-family: 'Cairo', sans-serif;
+  font-size: 18px;
+  padding: 15px;
+}
+.date-hijri{
+  word-spacing: 3px;
+}
+.clock{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  background-color: rgba(0, 0, 0, .3);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+@media(max-width: 767px){
+.clock{
+    font-size: 18px;
+    padding: 10px;
+  }
+}
+/* ayah-section */
+.landing .ayah-section{
+  width: 60%;
+  min-width: 350px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  padding: 20px 60px;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.landing .ayah-section .ayah{
+  font-size: 20px;
+  word-spacing: 5px;
+  overflow: auto;
+}
+@media(max-width: 767px){
+  .landing .ayah-section .ayah{
+    font-size: 16px;
+    max-height: 150px;
+  }
+}
+.landing .ayah-section .ayah-player{
+  display: none;
+}
+.landing .ayah-section .play-rndm{
+  cursor: pointer;
+  font-size: 22px;
+  color: var(--beige-color);
+}
+.landing .ayah-section .play-rndm svg{
+  padding: 7px 15px;
+}
+.landing .ayah-section .play-rndm svg:hover{
+  background-color: rgba(225, 225, 225, .4);
+  color: rgb(200, 97, 97);
+}
+/* quran section */
+.quran .player .ayah-text{
+  width: 100%;
+  height: fit-content;
+  color: var(--main-color);
+  background-image: url(../images/back-ayah.jpg);
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0 0 3px var(--brown-color);
+}
+.quran .player .ayah-text .text-aya{
+  padding: 40px 50px;
+}
+.quran .player audio{
+  width: 700px;
+  max-width: 100%;
+  border: 2px solid var(--main-color);
+}
+.quran .player .btns{
+  width: 200px;
+  font-size: 22px;
+  color: var(--green-color);
+  cursor: pointer;
+}
+
+.quran .all-surahs a.show{
+  display: block !important;
+  animation: animate-show 0.5s ease;
+  -webkit-animation: animate-show 0.5s ease;
+}
+@keyframes animate-show {
+  0%{
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.quran .all-surahs a.hide{
+  display: none !important;
+}
+.quran .all-surahs .container-surah{
+  background-color: var(--main-color);
+  color: var(--white-color);
+  padding: 15px 10px;
+  cursor: pointer;
+}
+.quran .all-surahs .info-surah .number{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  padding: 10px 12px;
+  background-color: var(--brown-color);
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+.quran .all-surahs .container-surah:hover .number{
+  background-color: var(--yellow-color);
+  color: var(--brown-color);
+}
+.quran .all-surahs .info-surah .number .num{
+  display: inline-block;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+.quran .all-surahs .info-surah .name-surah{
+  margin-right: 20px;
+  font-size: 18px;
+}
+.quran .all-surahs .number-of-ayaht{
+  color: #bbb;
+}
+.quran .all-surahs .container-surah:hover .number-of-ayaht{
+  color: var(--yellow-color);
+}
+.quran .see-more{
+  width: 200px;
+  color: var(--brown-color);
+  border-color: var(--brown-color);
+}
+.quran .see-more:hover{
+  background-color: var(--brown-color);
+  color: var(--white-color);
+}
+/* HADITH SECTION */
+.hadith .hadith-book-items, .hadith-dekr .h-d-books{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-family: 'Cairo', sans-serif;
+  overflow: hidden;
+}
+.hadith .hadith-book-items li, .hadith-dekr .h-d-books li{
+  cursor: pointer;
+  background-image: url(../images/hadith-book.jpg);
+  background-size: cover;
+  color: #fff;
+  height: 160px;
+}
+.hadith .hadith-book-items li a,
+.hadith-dekr .h-d-books li a,
+.dekr-moslem .dekr a{
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  word-spacing: 5px;
+  color: var(--dark-blue);
+  transition: .5s;
+  -webkit-transition: .5s;
+  width: 100%;
+  height: 100%;
+}
+.hadith .hadith-book-items li a{
+  line-height: 160px;
+}
+.hadith .hadith-book-items li:hover a,
+.dekr-moslem .dekr a:hover{
+  opacity: .7;
+} 
+ /* dekr section */
+/* .dekr-moslem .all-azkar-moslem{
+  gap: 20px;
+} */
+.dekr-moslem .all-azkar-moslem{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+}
+.dekr-moslem .dekr{
+  cursor: pointer;
+  padding: 2rem;
+  background-image: url(../images/cover-dekr.jpg);
+  background-size: cover;
+  background-position: left center;
+  box-shadow: 0 0 3px #999;
+}
+.dekr-moslem .dekr a{
+  font-size: 18px;
+}
+/* FOOTER */
+footer{
+  position: relative;
+  margin-top: 1.5rem;
+}
+@media(max-width: 767px){
+  footer{
+    padding-top: 3rem;
+    margin-top: 3rem;
+  }
+}
+footer .icons svg{
+  font-size: 22px;
+  cursor: pointer;
+}
+footer .icons svg:hover{
+  opacity: .8;
+}
+footer .copy-right{
+  width: 100%;
+  background-color: var(--main-color);
+  color: var(--white-color);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  text-transform: capitalize;
+  word-spacing: 2px;
+  font-weight: 500;
+  direction: ltr;
+}
+@media(max-width: 767px){
+  footer .copy-right{
+    font-size: 14px;
+  }
+}
+footer .name{
+  color: var(--beige-color);
+}
